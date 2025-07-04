@@ -13,14 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.gravitee.resource.vector.store.api;
+package io.gravitee.resource.ai.vector.store.api;
+
+import io.reactivex.rxjava3.core.Completable;
+import io.reactivex.rxjava3.core.Flowable;
 
 /**
  * @author Rémi SULTAN (remi.sultan at graviteesource.com)
  * @author GraviteeSource Team
  */
-public enum IndexType {
-  FLAT,
-  IVF,
-  HNSW,
+public interface VectorStore {
+  default Completable rxAdd(String index, VectorEntity vectorEntity) {
+    return Completable.fromAction(() -> add(index, vectorEntity));
+  }
+
+  void add(String index, VectorEntity vectorEntity);
+
+  Flowable<VectorResult> findRelevant(String index, float[] vector);
+
+  void remove(String index, String id);
+
+  default Completable rxRemove(String index, String id) {
+    return Completable.fromAction(() -> remove(index, id));
+  }
 }

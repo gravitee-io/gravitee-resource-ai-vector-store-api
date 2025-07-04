@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.gravitee.resource.vector.store.api;
+package io.gravitee.resource.ai.vector.store.api;
 
 import java.util.concurrent.TimeUnit;
 
@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
  * @author Rémi SULTAN (remi.sultan at graviteesource.com)
  * @author GraviteeSource Team
  */
-public record VectorStoreProperties(
+public record AiVectorStoreProperties(
   int embeddingSize,
   int maxResults,
   Similarity similarity,
