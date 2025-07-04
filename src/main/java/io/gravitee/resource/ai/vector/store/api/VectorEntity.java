@@ -13,15 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.gravitee.resource.vector.store.api;
+package io.gravitee.resource.ai.vector.store.api;
 
-import io.gravitee.resource.api.AbstractConfigurableResource;
-import io.gravitee.resource.api.ResourceConfiguration;
+import java.util.Map;
 
 /**
  * @author Rémi SULTAN (remi.sultan at graviteesource.com)
  * @author GraviteeSource Team
  */
-public abstract class VectorStoreResource<C extends ResourceConfiguration>
-  extends AbstractConfigurableResource<C>
-  implements VectorStore {}
+public record VectorEntity(
+  String id,
+  String text,
+  float[] vector,
+  Map<String, Object> metadata,
+  long timestamp
+) {
+  public <T> T get(String key) {
+    return (T) metadata.get(key);
+  }
+}

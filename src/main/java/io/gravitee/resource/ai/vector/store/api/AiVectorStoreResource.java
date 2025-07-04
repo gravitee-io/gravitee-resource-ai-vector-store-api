@@ -13,13 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.gravitee.resource.vector.store.api;
+package io.gravitee.resource.ai.vector.store.api;
+
+import io.gravitee.resource.api.AbstractConfigurableResource;
+import io.gravitee.resource.api.ResourceConfiguration;
 
 /**
  * @author Rémi SULTAN (remi.sultan at graviteesource.com)
  * @author GraviteeSource Team
  */
-public enum Similarity {
-  EUCLIDEAN,
-  COSINE,
-}
+public abstract class AiVectorStoreResource<C extends ResourceConfiguration>
+  extends AbstractConfigurableResource<C>
+  implements VectorStore {}

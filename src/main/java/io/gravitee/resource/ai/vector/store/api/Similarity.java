@@ -13,22 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.gravitee.resource.vector.store.api;
-
-import java.util.Map;
+package io.gravitee.resource.ai.vector.store.api;
 
 /**
  * @author Rémi SULTAN (remi.sultan at graviteesource.com)
  * @author GraviteeSource Team
  */
-public record VectorEntity(
-  String id,
-  String text,
-  float[] vector,
-  Map<String, Object> metadata,
-  long timestamp
-) {
-  public <T> T get(String key) {
-    return (T) metadata.get(key);
-  }
+public enum Similarity {
+  EUCLIDEAN,
+  COSINE,
 }
