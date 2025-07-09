@@ -23,17 +23,19 @@ import io.reactivex.rxjava3.core.Flowable;
  * @author GraviteeSource Team
  */
 public interface VectorStore {
-  default Completable rxAdd(String index, VectorEntity vectorEntity) {
-    return Completable.fromAction(() -> add(index, vectorEntity));
+  String AI_VECTOR_STORE_INDEX_KEY = "ai-vector-store-index";
+
+  default Completable rxAdd(VectorEntity vectorEntity) {
+    return Completable.fromAction(() -> add(vectorEntity));
   }
 
-  void add(String index, VectorEntity vectorEntity);
+  void add(VectorEntity vectorEntity);
 
-  Flowable<VectorResult> findRelevant(String index, float[] vector);
+  Flowable<VectorResult> findRelevant(VectorEntity vectorEntity);
 
-  void remove(String index, String id);
+  void remove(VectorEntity vectorEntity);
 
-  default Completable rxRemove(String index, String id) {
-    return Completable.fromAction(() -> remove(index, id));
+  default Completable rxRemove(VectorEntity vectorEntity) {
+    return Completable.fromAction(() -> remove(vectorEntity));
   }
 }

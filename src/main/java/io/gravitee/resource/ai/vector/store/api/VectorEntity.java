@@ -28,6 +28,14 @@ public record VectorEntity(
   Map<String, Object> metadata,
   long timestamp
 ) {
+  public VectorEntity(
+    String text,
+    float[] vector,
+    Map<String, Object> metadata
+  ) {
+    this(null, text, vector, metadata, System.currentTimeMillis());
+  }
+
   public <T> T get(String key) {
     return (T) metadata.get(key);
   }
