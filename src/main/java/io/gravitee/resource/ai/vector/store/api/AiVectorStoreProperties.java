@@ -27,6 +27,7 @@ public record AiVectorStoreProperties(
   Similarity similarity,
   float threshold,
   IndexType indexType,
+  boolean readOnly,
   boolean allowEviction,
   long evictTime,
   TimeUnit evictTimeUnit

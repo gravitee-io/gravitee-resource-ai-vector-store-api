@@ -36,6 +36,10 @@ public record VectorEntity(
     this(null, text, vector, metadata, System.currentTimeMillis());
   }
 
+  public VectorEntity(String id, String text, Map<String, Object> metadata) {
+    this(id, text, null, metadata, System.currentTimeMillis());
+  }
+
   public <T> T get(String key) {
     return (T) metadata.get(key);
   }
