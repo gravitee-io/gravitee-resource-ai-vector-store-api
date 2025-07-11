@@ -22,4 +22,5 @@ package io.gravitee.resource.ai.vector.store.api;
 public enum Similarity {
   EUCLIDEAN,
   COSINE,
+  DOT,
 }

@@ -23,8 +23,6 @@ import io.reactivex.rxjava3.core.Flowable;
  * @author GraviteeSource Team
  */
 public interface VectorStore {
-  String AI_VECTOR_STORE_INDEX_KEY = "ai-vector-store-index";
-
   default Completable rxAdd(VectorEntity vectorEntity) {
     return Completable.fromAction(() -> add(vectorEntity));
   }
