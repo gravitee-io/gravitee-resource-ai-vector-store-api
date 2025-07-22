@@ -17,6 +17,8 @@ package io.gravitee.resource.ai.vector.store.api;
 
 import io.gravitee.resource.api.AbstractConfigurableResource;
 import io.gravitee.resource.api.ResourceConfiguration;
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
 
 /**
  * @author Rémi SULTAN (remi.sultan at graviteesource.com)
@@ -24,4 +26,17 @@ import io.gravitee.resource.api.ResourceConfiguration;
  */
 public abstract class AiVectorStoreResource<C extends ResourceConfiguration>
   extends AbstractConfigurableResource<C>
-  implements VectorStore {}
+  implements VectorStore {
+
+  private ApplicationContext applicationContext;
+
+  @Override
+  public void setApplicationContext(ApplicationContext applicationContext)
+    throws BeansException {
+    this.applicationContext = applicationContext;
+  }
+
+  public <T> T getBean(Class<T> clazz) {
+    return applicationContext.getBean(clazz);
+  }
+}
