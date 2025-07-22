@@ -17,23 +17,23 @@ package io.gravitee.resource.ai.vector.store.api;
 
 import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.core.Flowable;
+import io.reactivex.rxjava3.schedulers.Schedulers;
+import org.springframework.context.ApplicationContextAware;
 
 /**
  * @author Rémi SULTAN (remi.sultan at graviteesource.com)
  * @author GraviteeSource Team
  */
-public interface VectorStore {
-  default Completable rxAdd(VectorEntity vectorEntity) {
-    return Completable.fromAction(() -> add(vectorEntity));
-  }
-
-  void add(VectorEntity vectorEntity);
+public interface VectorStore extends ApplicationContextAware {
+  Completable add(VectorEntity vectorEntity);
 
   Flowable<VectorResult> findRelevant(VectorEntity vectorEntity);
 
   void remove(VectorEntity vectorEntity);
 
   default Completable rxRemove(VectorEntity vectorEntity) {
-    return Completable.fromAction(() -> remove(vectorEntity));
+    return Completable
+      .fromAction(() -> remove(vectorEntity))
+      .subscribeOn(Schedulers.io());
   }
 }
