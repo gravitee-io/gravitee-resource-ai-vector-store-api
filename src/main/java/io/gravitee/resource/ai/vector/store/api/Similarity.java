@@ -20,7 +20,13 @@ package io.gravitee.resource.ai.vector.store.api;
  * @author GraviteeSource Team
  */
 public enum Similarity {
-  EUCLIDEAN,
-  COSINE,
-  DOT,
+  EUCLIDEAN, COSINE, DOT;
+
+  public float normalizeDistance(float distance) {
+    if (Float.isNaN(distance) || Float.isInfinite(distance)) return 0f;
+    return switch (this) {
+      case EUCLIDEAN -> 2f / (2f + Math.max(0f, distance));
+      case COSINE, DOT -> (2f - (distance < 0f ? 0f : (Math.min(distance, 2f)))) / 2f;
+    };
+  }
 }
