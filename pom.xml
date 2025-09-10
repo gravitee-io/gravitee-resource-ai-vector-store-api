@@ -41,7 +41,7 @@
 
     <groupId>io.gravitee.resource.ai.vector.store</groupId>
     <artifactId>gravitee-resource-ai-vector-store-api</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-alpha.1</version>
 
 
     <properties>
