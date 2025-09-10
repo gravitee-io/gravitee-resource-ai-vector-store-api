@@ -1,3 +1,10 @@
+# [1.0.0-alpha.2](https://github.com/gravitee-io/gravitee-resource-ai-vector-store-api/compare/1.0.0-alpha.1...1.0.0-alpha.2) (2025-09-10)
+
+
+### Bug Fixes
+
+* name and description for project ([#7](https://github.com/gravitee-io/gravitee-resource-ai-vector-store-api/issues/7)) ([82f135a](https://github.com/gravitee-io/gravitee-resource-ai-vector-store-api/commit/82f135a7c3239ba1a57a624db94ec467d76da031))
+
 # 1.0.0-alpha.1 (2025-09-10)
 
 
