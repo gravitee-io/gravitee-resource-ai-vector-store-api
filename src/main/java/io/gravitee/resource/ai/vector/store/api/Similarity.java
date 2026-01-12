@@ -28,9 +28,8 @@ public enum Similarity {
     if (Float.isNaN(distance) || Float.isInfinite(distance)) return 0f;
     return switch (this) {
       case EUCLIDEAN -> 2f / (2f + Math.max(0f, distance));
-      case COSINE, DOT -> (
-        2f - (distance < 0f ? 0f : (Math.min(distance, 2f)))
-      ) /
+      case COSINE, DOT -> (2f -
+        (distance < 0f ? 0f : (Math.min(distance, 2f)))) /
       2f;
     };
   }
