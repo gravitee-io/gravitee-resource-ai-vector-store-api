@@ -24,8 +24,20 @@
     <parent>
         <groupId>io.gravitee</groupId>
         <artifactId>gravitee-parent</artifactId>
-        <version>23.4.1</version>
+        <version>23.5.0</version>
     </parent>
+
+    <groupId>io.gravitee.resource.ai.vector.store</groupId>
+    <artifactId>gravitee-resource-ai-vector-store-api</artifactId>
+    <version>1.0.0-alpha.2</version>
+
+    <name>Gravitee.io - Resource - Ai Vector Store API</name>
+    <description>Base api library for vector store resources</description>
+
+    <properties>
+        <gravitee-bom.version>8.3.47</gravitee-bom.version>
+        <gravitee-resource-api.version>1.1.0</gravitee-resource-api.version>
+    </properties>
 
     <dependencyManagement>
         <dependencies>
@@ -39,20 +51,6 @@
         </dependencies>
     </dependencyManagement>
 
-    <groupId>io.gravitee.resource.ai.vector.store</groupId>
-    <artifactId>gravitee-resource-ai-vector-store-api</artifactId>
-    <version>1.0.0-alpha.2</version>
-
-    <name>Gravitee.io - Resource - Ai Vector Store API</name>
-    <description>Base api library for vector store resources</description>
-
-    <properties>
-        <gravitee-bom.version>8.3.14</gravitee-bom.version>
-        <gravitee-resource-api.version>1.1.0</gravitee-resource-api.version>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 
     <dependencies>
         <dependency>
