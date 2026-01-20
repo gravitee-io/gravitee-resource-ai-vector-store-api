@@ -32,8 +32,8 @@ public interface VectorStore extends ApplicationContextAware {
   void remove(VectorEntity vectorEntity);
 
   default Completable rxRemove(VectorEntity vectorEntity) {
-    return Completable
-      .fromAction(() -> remove(vectorEntity))
-      .subscribeOn(Schedulers.io());
+    return Completable.fromAction(() -> remove(vectorEntity)).subscribeOn(
+      Schedulers.io()
+    );
   }
 }
