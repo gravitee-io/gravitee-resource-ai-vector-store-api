@@ -1,3 +1,10 @@
+# [1.0.0-alpha.3](https://github.com/gravitee-io/gravitee-resource-ai-vector-store-api/compare/1.0.0-alpha.2...1.0.0-alpha.3) (2026-01-22)
+
+
+### Features
+
+* update versions in pom.xml ([f92de00](https://github.com/gravitee-io/gravitee-resource-ai-vector-store-api/commit/f92de00a95ebf6fc73ab67c93c64c615ede6605f))
+
 # [1.0.0-alpha.2](https://github.com/gravitee-io/gravitee-resource-ai-vector-store-api/compare/1.0.0-alpha.1...1.0.0-alpha.2) (2025-09-10)
 
 
