@@ -2,6 +2,16 @@
 
 API definition for AI vector store resources in the Gravitee ecosystem. This module provides interfaces and contracts for implementing vector database resources that enable semantic search and similarity-based retrieval.
 
+## Compatibility matrix
+
+| Plugin version | APIM            | Java version |
+|----------------|-----------------|--------------|
+| 1.x            | 4.9.x to latest | 21           |
+
+The **Java version** column is the bytecode level of the latest release of each line, which sets the minimum runtime able to load the artifact.
+
+This API is bundled by the vector store plugins that build on it, not supplied by the gateway, so its own compatibility is the bytecode level alone.
+
 ## Overview
 
 This is an **API-only module** that defines the contract for vector store implementations. Concrete implementations (e.g., for Pinecone, Weaviate, Milvus, etc.) should be created in separate modules.
